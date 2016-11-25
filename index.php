@@ -26,7 +26,7 @@
       // check if the form was submitted
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // set the subtotal amount, or an error message
-        if (empty($_POST['subtotal'])) {
+        if (DNE($_POST['subtotal'])) {
           $subtotalError = 'Subtotal amount is required.';
         } else {
           $possibleSubtotal = sanitize($_POST['subtotal']);
@@ -40,12 +40,12 @@
         }
 
         // set the tip percentage amount, or an error message
-        if (empty($_POST['tipPercentage'])) {
+        if (DNE($_POST['tipPercentage'])) {
           $tipPercentageError = 'Tip percentage is required.';
         } else {
           $tipPercentage = sanitize($_POST['tipPercentage']);
           if ($tipPercentage == 'custom') {
-            if (empty($_POST['customTipPercentage'])) {
+            if (DNE($_POST['customTipPercentage'])) {
               $tipPercentageError = 'Custom tip percentage is required when custom option is selected.';
             } else {
               $possibleTipPercentage = sanitize($_POST['customTipPercentage']);
@@ -61,7 +61,7 @@
         }
 
         // set the split amount, or an error message
-        if (empty($_POST['split'])) {
+        if (DNE($_POST['split'])) {
           $splitError = 'Split number is required.';
         } else {
           $possibleSplit = sanitize($_POST['split']);
@@ -80,6 +80,10 @@
       // sanitizes all form input
       function sanitize($data) {
         return htmlspecialchars(stripslashes(trim($data)));
+      }
+
+      function DNE($number) {
+        return empty($number) && $number !== '0';
       }
     ?>
 
