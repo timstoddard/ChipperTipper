@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Roboto);
+
+body {
+  align-items: center;
+  background: #4fc3f7;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  margin: 0;
+  width: 100vw;
+}
+
+input[type="text"] {
+  font-size: 1.08rem;
+}
+
+.error {
+  background-color: rgba(255,0,0,0.15);
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+}
+
+.errorMessage {
+  color: black;
+  font-style: italic;
+}
+
+#calculator {
+  background: white;
+  -webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow:    10px 10px 60px 0px rgba(0,0,0,0.6);
+  box-shadow:         10px 10px 60px 0px rgba(0,0,0,0.6);
+  margin-top: 20px;
+  padding: 20px;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+#subtotal,
+#tipPercentage,
+#split,
+#submit {
+  margin-bottom: 12px;
+  padding: 6px;
+}
+
+#tipPercentage {
+  display: flex;
+  flex-direction: column;
+}
+
+#tipPercentage label {
+  display: inline;
+}
+
+input[name="subtotal"] {
+  max-width: 6rem;
+}
+input[name="customTipPercentage"] {
+  max-width: 4rem;
+}
+
+input[name="split"] {
+  max-width: 2rem;
+}
+
+#submit {
+  text-align: center;
+}
+
+input[type="submit"] {
+  background: none;
+  border: 1px solid rgb(215,215,215);
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #4fc3f7;
+}
+
+#resultContainer {
+  border: 1px dotted blue;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+#result {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+tr:hover {
+  background-color: rgb(235,235,235);
+}
+
+tr:not(:last-of-type) td {
+  border-bottom: 1px solid rgb(225,225,225);
+}
+
+td {
+  padding: 4px;
+}
+
+td:first-child {
+  padding-right: 5px;
+}
+
+td:nth-child(2) {
+  padding-left: 5px;
+}
